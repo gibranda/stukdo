@@ -9,10 +9,12 @@ gem "simple_form"
 
 gem 'devise'
 
+#gem 'auto_html', '~>1.6.4'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -41,6 +43,7 @@ gem 'jbuilder', '~> 2.5'
 #  gem 'bcrypt', '~> 3.1.10', require: false
 #end
 
+# important: mengatasi error menggunakan devise 
 gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
 
 #gem 'bcrypt-ruby', '~> 3.0.1', :require => 'bcrypt'
@@ -55,6 +58,12 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'sqlite3'
+end
+
+group :production do
+	gem 'rails_12factor'
+	gem 'pg'
 end
 
 group :development do
